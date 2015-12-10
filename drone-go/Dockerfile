@@ -6,7 +6,7 @@ WORKDIR /home/ubuntu
 USER ubuntu
 RUN sudo apt-get install -y libmagic-dev
 ADD golang.sh /etc/drone.d/
-RUN wget http://golang.org/dl/go1.5.2.linux-amd64.tar.gz --quiet && \
+RUN wget http://golang.org/dl/go1.5.2.linux-amd64.tar.gz --no-check-certificate --quiet && \
                         sudo tar -C /usr/local -xzf go1.5.2.linux-amd64.tar.gz && \
                         sudo chown -R ubuntu:ubuntu /usr/local/go && \
                         rm go1.5.2.linux-amd64.tar.gz
